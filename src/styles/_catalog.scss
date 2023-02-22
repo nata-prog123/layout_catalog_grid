@@ -1,12 +1,13 @@
 .catalog {
-  display: flex;
-  flex-wrap: wrap;
-
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 200px);
+  justify-content: center;
+  gap: 0 48px;
   max-width: 944px;
   margin: 0 auto;
 
   &__card {
-    display: flex;
+    display: grid;
     justify-content: center;
     align-items: center;
     width: 200px;
@@ -18,5 +19,23 @@
 
   &__card:not(:nth-child(4n)) {
     margin-right: 48px;
+  }
+}
+
+@media (max-width: 1023.9px) {
+  .catalog {
+    max-width: 940px;
+  }
+}
+
+@media (max-width: 767.9px) {
+  .catalog {
+    max-width: 690px;
+  }
+}
+
+@media (max-width: 487.9px) {
+  .catalog {
+    max-width: 420px;
   }
 }
