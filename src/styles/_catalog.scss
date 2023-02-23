@@ -1,10 +1,21 @@
 .catalog {
   display: grid;
   grid-template-columns: repeat(4, 200px);
-  justify-content: center;
-  gap: 48px;
-  max-width: 944px;
+  justify-content: space-around;
+  max-width: 994px;
   margin: 0 auto;
+
+  @media (max-width: 1023px) {
+    grid-template-columns: repeat(3, 200px);
+  }
+  
+  @media (max-width: 767px) {
+    grid-template-columns: repeat(2, 200px);
+  }
+  
+  @media (max-width: 487px) {
+    grid-template-columns: repeat(1, 200px);
+  }
 
   &__card {
     display: grid;
@@ -18,23 +29,6 @@
 
   &__card:not(:nth-child(4n)) {
     margin-right: 48px;
-  }
-}
-
-@media (max-width: 1023.9px) {
-  .catalog {
-    grid-template-columns: repeat(3, 200px);
-  }
-}
-
-@media (max-width: 767.9px) {
-  .catalog {
-    grid-template-columns: repeat(2, 200px);
-  }
-}
-
-@media (max-width: 487.9px) {
-  .catalog {
-    grid-template-columns: repeat(1, 200px);
+    margin-bottom: 48px;
   }
 }
